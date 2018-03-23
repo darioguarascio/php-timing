@@ -1,0 +1,7 @@
+{
+    "name": "disfasia/php-timing",
+    "description": "Get execution times of a full script or parts of it",
+    "require": {
+        "php": "^5.3.3"
+    }
+}
