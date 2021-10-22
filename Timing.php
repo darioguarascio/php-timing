@@ -20,7 +20,7 @@ class Timing {
      *
      * @param $key
      *
-     * @return vod
+     * @return void
      */
     public static function break($key = null) {
         $key = self::getKey($key, __FUNCTION__);
@@ -32,7 +32,7 @@ class Timing {
      *
      * @param $key
      *
-     * @return vod
+     * @return void
      */
     public static function start($key = null) {
         $key = self::getKey($key, __FUNCTION__);
@@ -89,6 +89,21 @@ class Timing {
 
         return $return;
     }
+
+    /**
+     * Adds a custom measure
+     *
+     * @param $key
+     * @param $start
+     * @param $stop
+     *
+     * @return  voif
+     */
+    public static function addMeasure($key, $start, $stop) {
+        $elapsed = $stop - $start;
+        self::$result[] = array( $key, $elapsed );
+    }
+
 
     /**
      * Get a normalized array of timings, removing (parameters)
